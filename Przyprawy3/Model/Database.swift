@@ -529,14 +529,19 @@ class CategorySeting {
     func deleteElement(forIndexpath indexpath: IndexPath) {
         let secton = indexpath.section
         let row = indexpath.row
+        
+//aaaaaaaaaaaaaaaaaaaa
+       
+        
         sectionsData[secton].objects.remove(at: row)
         if sectionsData[secton].objects.count == 0 {
+            print("UWAGA. OSTATNI ELEMENT")
             print("befor \(sectionsData[0])")
             print("      \(sectionsData[1])")
-            sectionsData.remove(at: secton)
+            //sectionsData.remove(at: secton)
             print("aftyer \(sectionsData[0])")
             print("       \(sectionsData[1])")
-}
+        }
     }
     func  clearToShopForCategorries() {
         categoryGroups = [[], [], [],[],[],[],[],[]]

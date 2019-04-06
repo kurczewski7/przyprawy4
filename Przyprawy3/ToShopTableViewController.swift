@@ -40,9 +40,13 @@ class ToShopTableViewController: UIViewController, UITableViewDelegate, UITableV
         tabView.reloadData()
         print("viewWillAppear")
     }
-
+    @IBAction func addNewListToBay(_ sender: UIBarButtonItem) {
+        
+    }
+    @IBAction func changeList(_ sender: UIBarButtonItem) {
+        
+    }    
     // MARK: - Table view data source
-
      func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
          print("numberOfSections \(database.category.sectionsData.count))")
@@ -66,6 +70,10 @@ class ToShopTableViewController: UIViewController, UITableViewDelegate, UITableV
             
             cell.producentLabel.text = toShop?.producent
             cell.productNameLabel.text = toShop?.productName
+            
+            
+            cell.accessoryType = .detailButton
+            
             let grams="\(toShop?.weight ?? 0)g"
             cell.detailLabel.text = grams.count==2 ? "" : grams
             if let img=toShop?.fullPicture {
@@ -84,9 +92,12 @@ class ToShopTableViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label=UILabel()
         let sectionName = database.category.getCategorySectionHeader(forSection: section)
+        let secCount = database.category.sectionsData[section].objects.count
         label.text="\(sectionName)"
         label.textAlignment = .center
-        label.backgroundColor=UIColor.lightGray
+        
+        label.backgroundColor = ((secCount == 0) ? UIColor.white : UIColor.lightGray)
+        label.textColor = ((secCount == 0) ? UIColor.white : UIColor.black)
         return label
     }
     

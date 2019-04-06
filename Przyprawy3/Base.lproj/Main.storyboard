@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5oO-tn-M2O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5oO-tn-M2O">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +13,7 @@
         <!--Category 🗄-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CategoryViewController" customModule="Przyprawy3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CategoryViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellCategories" id="fTp-vj-cpb" customClass="CategoryCollectionViewCell" customModule="Przyprawy3" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellCategories" id="fTp-vj-cpb" customClass="CategoryCollectionViewCell" customModule="Przyprawy4" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="165" height="165"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -104,6 +105,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Category 🗄" id="j3i-mg-BlL">
                         <barButtonItem key="backBarButtonItem" title="🗄" id="XnZ-XJ-KSq"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="add_file" id="OUl-ce-Ed9"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="dhv-Zg-V2M" id="Ksd-o9-4kT"/>
@@ -112,13 +114,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="icA-2F-gcc"/>
             </objects>
-            <point key="canvasLocation" x="2135" y="777"/>
+            <point key="canvasLocation" x="2908" y="777"/>
         </scene>
-        <!--Szukaj-->
+        <!--Lista-->
         <scene sceneID="0LX-6M-Sva">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eEU-mC-SKT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Szukaj" image="Filter" id="bfC-sg-oQ2"/>
+                    <tabBarItem key="tabBarItem" title="Lista" image="add_property" id="bfC-sg-oQ2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Emb-r3-q9j">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -126,7 +128,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6W3-RM-egz"/>
+                        <segue destination="c5G-IV-pUg" kind="relationship" relationship="rootViewController" id="hpW-0A-2VT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LEl-r3-WNI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,7 +138,7 @@
         <!--Brakuje-->
         <scene sceneID="e8q-G9-MG6">
             <objects>
-                <viewController id="dnd-Dn-Lwg" customClass="BrakujeViewController" customModule="Przyprawy3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dnd-Dn-Lwg" customClass="BrakujeViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="we7-F0-iyQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -329,7 +331,7 @@
         <!--Scanning now-->
         <scene sceneID="5xg-KY-RAv">
             <objects>
-                <viewController storyboardIdentifier="scanerViewController" id="0QL-Ds-h0P" customClass="ScanerViewController" customModule="Przyprawy3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="scanerViewController" id="0QL-Ds-h0P" customClass="ScanerViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0U1-aO-fXe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -364,7 +366,7 @@
         <!--Take Photo-->
         <scene sceneID="Z6N-fE-BRu">
             <objects>
-                <viewController storyboardIdentifier="takePhoto" id="xj8-M5-K4c" userLabel="Take Photo" customClass="TakePhotoViewController" customModule="Przyprawy3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="takePhoto" id="xj8-M5-K4c" userLabel="Take Photo" customClass="TakePhotoViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nmA-jB-NQx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -456,7 +458,7 @@
         <!--Detail At HomeView Controller2-->
         <scene sceneID="Wt5-z7-voZ">
             <objects>
-                <viewController id="enE-9m-W5Y" userLabel="Detail At HomeView Controller2" customClass="DetailAtHomeViewController" customModule="Przyprawy3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="enE-9m-W5Y" userLabel="Detail At HomeView Controller2" customClass="DetailAtHomeViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3M5-ig-jKk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -533,12 +535,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FxW-Si-OEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3804" y="776.76161919040487"/>
+            <point key="canvasLocation" x="4649" y="777"/>
         </scene>
         <!--Pop View Controller-->
         <scene sceneID="eJa-YL-QAU">
             <objects>
-                <viewController storyboardIdentifier="popVC" id="hTl-S7-ICk" userLabel="Pop View Controller" customClass="popViewController" customModule="Przyprawy3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popVC" id="hTl-S7-ICk" userLabel="Pop View Controller" customClass="popViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zya-ih-sb8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -575,12 +577,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWt-YD-oNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4649" y="777"/>
+            <point key="canvasLocation" x="5362" y="777"/>
         </scene>
         <!--In Basket-->
         <scene sceneID="Gjb-as-UvW">
             <objects>
-                <viewController id="449-9N-d5u" customClass="InBasketViewController" customModule="Przyprawy3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="449-9N-d5u" customClass="InBasketViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sq5-ic-DiP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -593,7 +595,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="FmZ-pv-Zaq" customClass="InBasketTableViewCell" customModule="Przyprawy3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="FmZ-pv-Zaq" customClass="InBasketTableViewCell" customModule="Przyprawy4" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FmZ-pv-Zaq" id="VbF-hn-bMX">
@@ -683,7 +685,7 @@
         <!--Lista zakupów -->
         <scene sceneID="dDu-HT-hDr">
             <objects>
-                <viewController id="OUu-tw-MgZ" customClass="ShopingListViewController" customModule="Przyprawy3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OUu-tw-MgZ" customClass="ShopingListViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DB3-em-okH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -698,7 +700,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="NvK-IA-ir1" customClass="ShopingListCellView" customModule="Przyprawy3" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="NvK-IA-ir1" customClass="ShopingListCellView" customModule="Przyprawy4" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="102" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -752,7 +754,7 @@
         <!--Kontakty-->
         <scene sceneID="d14-di-eCt">
             <objects>
-                <viewController id="PRb-pf-nmK" customClass="Contacts" customModule="Przyprawy3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PRb-pf-nmK" customClass="Contacts" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eWO-f5-Uet">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -849,7 +851,7 @@
         <!--Phone Contacts View Controller-->
         <scene sceneID="IpI-0c-vLJ">
             <objects>
-                <viewController id="Hn3-iw-zDm" userLabel="Phone Contacts View Controller" customClass="PhoneContactsViewController" customModule="Przyprawy3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Hn3-iw-zDm" userLabel="Phone Contacts View Controller" customClass="PhoneContactsViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rbo-8b-ROb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -991,10 +993,10 @@
             </objects>
             <point key="canvasLocation" x="1324" y="3710"/>
         </scene>
-        <!--To shop 2-->
+        <!--To shop 3-->
         <scene sceneID="XVD-ro-i5J">
             <objects>
-                <viewController id="Xdy-XS-FUA" userLabel="To shop 2" customClass="ToShopTableViewController" customModule="Przyprawy3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Xdy-XS-FUA" userLabel="To shop 3" customClass="ToShopTableViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S1g-jR-vzS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1010,7 +1012,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="zbC-Em-wal" customClass="ToShopTableViewCell" customModule="Przyprawy3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="zbC-Em-wal" customClass="ToShopTableViewCell" customModule="Przyprawy4" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zbC-Em-wal" id="kff-LN-TKM">
@@ -1110,7 +1112,7 @@
         <!--Lista zakupow-->
         <scene sceneID="0g8-SP-WJz">
             <objects>
-                <viewController id="HD1-DK-cfl" customClass="WebViewController" customModule="Przyprawy3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HD1-DK-cfl" customClass="WebViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V3Z-rT-t19">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1132,7 +1134,7 @@
         <!--Share-->
         <scene sceneID="2mT-IT-QOr">
             <objects>
-                <viewController id="Yha-b8-xHJ" customClass="ShareViewController" customModule="Przyprawy3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Yha-b8-xHJ" customClass="ShareViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nzw-gr-6yu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1233,7 +1235,7 @@
         <!--Detail At HomeView Controller-->
         <scene sceneID="vmb-6b-Eec">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="AfV-sl-g9n" userLabel="Detail At HomeView Controller" customClass="AtHomeViewController" customModule="Przyprawy3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="AfV-sl-g9n" userLabel="Detail At HomeView Controller" customClass="AtHomeViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pez-Gd-y1i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1249,7 +1251,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="rhw-jJ-cK2" customClass="AtHomeCell" customModule="Przyprawy3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="rhw-jJ-cK2" customClass="AtHomeCell" customModule="Przyprawy4" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rhw-jJ-cK2" id="WbM-IT-Vxc">
@@ -1359,20 +1361,151 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VmS-wH-Nbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3030" y="791"/>
+            <point key="canvasLocation" x="3729" y="777"/>
+        </scene>
+        <!--To shop-->
+        <scene sceneID="zhV-n2-wtc">
+            <objects>
+                <viewController id="c5G-IV-pUg" customClass="ToShopTableViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3rz-Da-7hD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="tu pwisz dane" translatesAutoresizingMaskIntoConstraints="NO" id="Bjv-D4-HH9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="c5G-IV-pUg" id="tQ2-nf-p06"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4is-sJ-bDd">
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="IP8-P3-u5J" customClass="ToShopTableViewCell" customModule="Przyprawy4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="124"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IP8-P3-u5J" id="CT4-bf-exK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="123.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Producent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chi-PJ-RG5">
+                                                    <rect key="frame" x="130" y="2" width="240" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P0Z-fC-A4Y">
+                                                    <rect key="frame" x="5" y="2" width="120" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="120" id="KSh-YA-7Ze"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="WpK-KG-9QA"/>
+                                                        <constraint firstAttribute="width" constant="120" id="iDm-VV-Nl8"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="ProductName" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ng7-po-t0I">
+                                                    <rect key="frame" x="130" y="33" width="225" height="58"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPM-L8-CKF">
+                                                    <rect key="frame" x="130" y="99" width="240" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="chi-PJ-RG5" firstAttribute="top" secondItem="CT4-bf-exK" secondAttribute="top" constant="2" id="63P-FL-Wpb"/>
+                                                <constraint firstAttribute="trailing" secondItem="chi-PJ-RG5" secondAttribute="trailing" constant="5" id="9Wr-7D-Dkw"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ng7-po-t0I" secondAttribute="trailing" constant="5" id="BYl-Qo-Ymx"/>
+                                                <constraint firstItem="rPM-L8-CKF" firstAttribute="top" secondItem="Ng7-po-t0I" secondAttribute="bottom" constant="8" symbolic="YES" id="BtT-TZ-gGM"/>
+                                                <constraint firstItem="P0Z-fC-A4Y" firstAttribute="top" secondItem="CT4-bf-exK" secondAttribute="top" constant="2" id="CfF-OD-Akk"/>
+                                                <constraint firstItem="rPM-L8-CKF" firstAttribute="top" secondItem="Ng7-po-t0I" secondAttribute="bottom" constant="8" id="F3Q-hH-dfw"/>
+                                                <constraint firstAttribute="bottom" secondItem="rPM-L8-CKF" secondAttribute="bottom" constant="2" id="FTF-mq-MAo"/>
+                                                <constraint firstAttribute="trailing" secondItem="rPM-L8-CKF" secondAttribute="trailing" constant="5" id="FhW-ge-fRZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="P0Z-fC-A4Y" secondAttribute="bottom" constant="2" id="HmT-gD-lc5"/>
+                                                <constraint firstItem="Ng7-po-t0I" firstAttribute="top" secondItem="chi-PJ-RG5" secondAttribute="bottom" constant="8" symbolic="YES" id="aL1-mw-U4g"/>
+                                                <constraint firstItem="Ng7-po-t0I" firstAttribute="leading" secondItem="P0Z-fC-A4Y" secondAttribute="trailing" constant="5" id="g1g-C7-2Kl"/>
+                                                <constraint firstItem="P0Z-fC-A4Y" firstAttribute="leading" secondItem="CT4-bf-exK" secondAttribute="leading" constant="5" id="pzK-sc-rSc"/>
+                                                <constraint firstItem="rPM-L8-CKF" firstAttribute="leading" secondItem="P0Z-fC-A4Y" secondAttribute="trailing" constant="5" id="t1p-yt-ULL"/>
+                                                <constraint firstItem="rPM-L8-CKF" firstAttribute="top" secondItem="CT4-bf-exK" secondAttribute="top" constant="99" id="vn6-zt-vaW"/>
+                                                <constraint firstItem="chi-PJ-RG5" firstAttribute="leading" secondItem="P0Z-fC-A4Y" secondAttribute="trailing" constant="5" id="ykU-TQ-zC7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailLabel" destination="rPM-L8-CKF" id="Bdx-0M-wdu"/>
+                                            <outlet property="picture" destination="P0Z-fC-A4Y" id="AxJ-xe-0fo"/>
+                                            <outlet property="producentLabel" destination="chi-PJ-RG5" id="BPN-Y0-dmF"/>
+                                            <outlet property="productNameLabel" destination="Ng7-po-t0I" id="MWy-BD-5U5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="c5G-IV-pUg" id="QEo-ah-oVb"/>
+                                    <outlet property="delegate" destination="c5G-IV-pUg" id="gc2-eL-eR6"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4is-sJ-bDd" firstAttribute="top" secondItem="Bjv-D4-HH9" secondAttribute="bottom" id="4Pn-Jd-Ksk"/>
+                            <constraint firstItem="4is-sJ-bDd" firstAttribute="leading" secondItem="pPi-pd-eMj" secondAttribute="leading" id="N4j-o0-4Vk"/>
+                            <constraint firstItem="pPi-pd-eMj" firstAttribute="bottom" secondItem="4is-sJ-bDd" secondAttribute="bottom" id="RAV-tq-D1Z"/>
+                            <constraint firstItem="Bjv-D4-HH9" firstAttribute="trailing" secondItem="pPi-pd-eMj" secondAttribute="trailing" id="RMb-HN-Bs9"/>
+                            <constraint firstItem="4is-sJ-bDd" firstAttribute="leading" secondItem="pPi-pd-eMj" secondAttribute="leading" id="U81-he-cAg"/>
+                            <constraint firstItem="Bjv-D4-HH9" firstAttribute="leading" secondItem="pPi-pd-eMj" secondAttribute="leading" id="Z0R-M3-Zd4"/>
+                            <constraint firstItem="4is-sJ-bDd" firstAttribute="bottom" secondItem="pPi-pd-eMj" secondAttribute="bottom" id="d9U-g3-FTz"/>
+                            <constraint firstItem="Bjv-D4-HH9" firstAttribute="top" secondItem="pPi-pd-eMj" secondAttribute="top" id="io1-CB-xVI"/>
+                            <constraint firstItem="pPi-pd-eMj" firstAttribute="trailing" secondItem="4is-sJ-bDd" secondAttribute="trailing" id="oyL-Ug-zJh"/>
+                            <constraint firstItem="4is-sJ-bDd" firstAttribute="top" secondItem="Bjv-D4-HH9" secondAttribute="bottom" id="qCB-7i-K9F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pPi-pd-eMj"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="To shop" id="HzP-hd-KRy">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" image="documents" id="mka-Rm-36V">
+                            <connections>
+                                <action selector="changeList:" destination="c5G-IV-pUg" id="dGK-dF-wNA"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="plus" id="8TU-3V-JIR">
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="wL5-vI-O63"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="add_file" id="C2D-xG-pvq">
+                                <connections>
+                                    <action selector="addNewListToBay:" destination="c5G-IV-pUg" id="qx0-ab-i5X"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchedBar" destination="Bjv-D4-HH9" id="JkY-ZV-WyG"/>
+                        <outlet property="tabView" destination="4is-sJ-bDd" id="TJ4-1F-jgO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FxX-xM-D99" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2158" y="777"/>
         </scene>
     </scenes>
     <resources>
         <image name="CYKORIA_ARROD_PAPRYKA_OSTRA_MIELONA_10G_59954826_0_173_200" width="173" height="200"/>
         <image name="Cofnij" width="25" height="25"/>
-        <image name="Filter" width="25" height="25"/>
         <image name="Like" width="25" height="25"/>
         <image name="Shopping" width="25" height="25"/>
         <image name="Visa" width="25" height="25"/>
-        <image name="barcode" width="37.5" height="37.5"/>
-        <image name="cameraCanon" width="900" height="900"/>
+        <image name="add_file" width="25" height="25"/>
+        <image name="add_property" width="25" height="25"/>
+        <image name="barcode" width="25" height="25"/>
+        <image name="cameraCanon" width="450" height="450"/>
+        <image name="documents" width="25" height="25"/>
         <image name="heart" width="128" height="128"/>
         <image name="keyboard_filled" width="25" height="25"/>
+        <image name="plus" width="25" height="25"/>
         <image name="setup" width="25" height="25"/>
     </resources>
 </document>
