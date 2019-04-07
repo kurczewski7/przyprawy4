@@ -184,12 +184,36 @@ class Database  {
         }
         catch { print("Error fetching data from context \(error)")   }
     }
-    func deleteOne(withProductRec row : Int = -1) {
-        let r = (row == -1 ? product.productArray.count-1 : row)
+    func deleteOne() {
+        let r = product.productArray.count-1
         context.delete(product.productArray[r])
         product.productArray.remove(at: r)
         save()
     }
+    func deleteOne(withProductRec row : Int) {
+        // for row -1 delete last record
+        var arr = product.productArray
+        let r = (row == -1 ? arr.count-1 : row)
+        context.delete(arr[r])
+        product.productArray.remove(at: r)
+        save()
+    }
+    func deleteOne(withToShopRec row : Int) {
+        var arr = toShopProduct.toShopProductArray
+        let r = (row == -1 ? arr.count-1 : row)
+        context.delete(arr[r])
+        arr.remove(at: r)
+        save()
+    }
+//    func deleteOne(withToShopRec row : Int) {
+//        var arr = toShopProduct.toShopProductArray
+//
+//        let r = (row == -1 ? arr.count-1 : row)
+//        context.delete(arr[r])
+//        arr.remove(at: r)
+//        save()
+//    }
+
     func delTable(dbTableName : DbTableNames)  {
         let ReqVar = NSFetchRequest<NSFetchRequestResult>(entityName: dbTableName.rawValue)
         let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: ReqVar)
@@ -538,10 +562,8 @@ class CategorySeting {
         if sectionsData[secton].objects.count == 0 {
             print("UWAGA. OSTATNI ELEMENT")
             print("befor \(sectionsData[0])")
-            print("      \(sectionsData[1])")
             //sectionsData.remove(at: secton)
-            print("aftyer \(sectionsData[0])")
-            print("       \(sectionsData[1])")
+            print("aftyer count: \(sectionsData.count)")
         }
     }
     func  clearToShopForCategorries() {
@@ -586,18 +608,45 @@ class ProductSeting {
 
 // New Class ------------------------------------------
 // variable for ToShopProductTable
+//class ToShopProduct2 {
+//    var context: NSManagedObjectContext
+//    var sortDescriptor:NSSortDescriptor
+//
+//    var toShopProductArray = [ToShopProductTable]()
+//    var featchResultCtrl: NSFetchedResultsController<ToShopProductTable>
+//    var feachRequest:NSFetchRequest<ToShopProductTable> = ToShopProductTable.fetchRequest()
+//    init(context: NSManagedObjectContext)
+//    {
+//        self.context=context
+//        toShopProductArray=[]
+//        sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
+//        feachRequest.sortDescriptors = [sortDescriptor]
+//        featchResultCtrl = NSFetchedResultsController(fetchRequest: feachRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+//    }
+//    func deleteOne(withProductRec row : Int = -1) {
+//        let r = (row == -1 ? toShopProductArray.count-1 : row)
+//        context.delete(toShopProductArray[r])
+//        toShopProductArray.remove(at: r)
+//        save()
+//    }
+//    func save() {
+//        do {   try context.save()    }
+//        catch  {  print("Error saveing context \(error)")   }
+//    }
+//}
 class ToShopProduct {
     var context: NSManagedObjectContext
+    var sortDescriptor:NSSortDescriptor
+    
     var toShopProductArray = [ToShopProductTable]()
     var featchResultCtrl: NSFetchedResultsController<ToShopProductTable>
     var feachRequest:NSFetchRequest<ToShopProductTable> = ToShopProductTable.fetchRequest()
-    let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
     init(context: NSManagedObjectContext)
     {
         self.context=context
         toShopProductArray=[]
+        sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
         feachRequest.sortDescriptors = [sortDescriptor]
-        feachRequest.sortDescriptors=[sortDescriptor]
         featchResultCtrl = NSFetchedResultsController(fetchRequest: feachRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     }
 }

@@ -111,16 +111,25 @@ class ToShopTableViewController: UIViewController, UITableViewDelegate, UITableV
 //    }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-              print("Kasowanie")
-              //database.toShopProductArray.remove(at: indexPath.row)
-              tableView.beginUpdates()
-// TODO: - kasowanie toShop
+            print("Kasowanie tableView")
+            //database.toShopProductArray.remove(at: indexPath.row)
+            tableView.beginUpdates()
             database.category.deleteElement(forIndexpath: indexPath)
-            //database.
+   
+ // TODO: - kasowanie toShop
             
+//            func getToShopProduct(indexPath: IndexPath) -> ProductTable?  {
+//                let prodNumber=database.category.sectionsData[indexPath.section].objects[indexPath.row]
+//                let  xxx = prodNumber < database.toShopProduct.toShopProductArray.count ? prodNumber : database.toShopProduct.toShopProductArray.count-1
+//                let toShopProduct = database.toShopProduct.toShopProductArray[xxx].productRelation
+//                return toShopProduct
+//            }
+
+            
+            database.deleteOne(withToShopRec: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-              tableView.endUpdates()
-              tableView.reloadData()
+            tableView.endUpdates()
+            tableView.reloadData()
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
