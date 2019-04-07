@@ -488,7 +488,6 @@ class CategorySeting {
     var context: NSManagedObjectContext
     var categoryArray: [CategoryTable] = []
     var sortCategoryDescriptor:NSSortDescriptor
-   
 
     init(context: NSManagedObjectContext)
     {
@@ -512,8 +511,7 @@ class CategorySeting {
         sectionsData.removeAll()
         var i: Int = 0
         var sectionNo: Int = 0
-        var sectionTitle = ""
-        
+        var sectionTitle = ""        
         for tmp in categoryGroups {
             if tmp.count > 0 {
                 sectionTitle = polishLanguage ? categoriesData[sectionNo].name : categoriesData[sectionNo].nameEN
@@ -567,9 +565,10 @@ class CategorySeting {
 } // end of class CategorySeting
 
 // New Class ------------------------------------------
+// variable for ProductTable
 class ProductSeting {
     var context: NSManagedObjectContext
-        // variable for ProductTable
+
         var productArray : [ProductTable] = []
         var featchResultCtrl: NSFetchedResultsController<ProductTable>
         let feachRequest: NSFetchRequest<ProductTable> = ProductTable.fetchRequest()
@@ -586,9 +585,9 @@ class ProductSeting {
 } // end of class ProductSeting
 
 // New Class ------------------------------------------
+// variable for ToShopProductTable
 class ToShopProduct {
     var context: NSManagedObjectContext
-    // variable for ToShopProductTable
     var toShopProductArray = [ToShopProductTable]()
     var featchResultCtrl: NSFetchedResultsController<ToShopProductTable>
     var feachRequest:NSFetchRequest<ToShopProductTable> = ToShopProductTable.fetchRequest()
@@ -604,9 +603,9 @@ class ToShopProduct {
 }
 
 // New Class ------------------------------------------
+// variable for ShopingProductTable
 class ShopingProduct {
     var context: NSManagedObjectContext
-    // variable for ShopingProductTable
     var shopingProductArray = [ShopingProductTable]()
     var featchResultCtrl: NSFetchedResultsController<ShopingProductTable>
     var feachRequest:NSFetchRequest<ShopingProductTable> = ShopingProductTable.fetchRequest()
@@ -621,16 +620,14 @@ class ShopingProduct {
         featchResultCtrl = NSFetchedResultsController(fetchRequest: feachRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     }
 }
-
 // New Class ------------------------------------------
+// variable for BasketProductTable
 class BasketProduct {
     var context: NSManagedObjectContext
-    // variable for BasketProductTable
     var basketProductArray = [BasketProductTable]()
     var featchResultCtrl: NSFetchedResultsController<BasketProductTable>
     var feachRequest:NSFetchRequest<BasketProductTable> = BasketProductTable.fetchRequest()
     let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
-    //var shopingProductTable : ShopingProductTable(context: context)
     init(context: NSManagedObjectContext)
     {
         self.context=context
