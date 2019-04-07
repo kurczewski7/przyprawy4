@@ -62,7 +62,6 @@ class InBasketViewController: UIViewController,UITableViewDataSource, UITableVie
         return fetchedResultsController.sections?.count  ?? 0  //sectionInfo.numberOfObjects
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionInfo = fetchedResultsController.sections![section]
         return sectionInfo.numberOfObjects

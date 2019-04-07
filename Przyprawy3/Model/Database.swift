@@ -20,31 +20,36 @@ class Database  {
     var context: NSManagedObjectContext
     var eanMode: Bool = false
     
-    //Entitis of project
+    // MARK: - Entitis of project
     var category: CategorySeting!  //  = CategorySeting(context: context)
     var product: ProductSeting!    //   = ProductSeting(context: context)
+    var toShopProduct: ToShopProduct!
+    var shopingProduct: ShopingProduct!
+    var basketProduct: BasketProduct!
  
-    // variable for ShopingProductTable
-    var shopingProductArray = [ShopingProductTable]()
-    let featchResultCtrlShopingProduct: NSFetchedResultsController<ShopingProductTable>
-    var feachShopingRequest:NSFetchRequest<ShopingProductTable> = ShopingProductTable.fetchRequest()
-    let sortShopingProductDescriptor = NSSortDescriptor(key: "id", ascending: true)
-    //var shopingProductTable : ShopingProductTable(context: context)
+//    // variable for ShopingProductTable
+//    var shopingProductArray = [ShopingProductTable]()
+//    let featchResultCtrlShopingProduct: NSFetchedResultsController<ShopingProductTable>
+//    var feachShopingRequest:NSFetchRequest<ShopingProductTable> = ShopingProductTable.fetchRequest()
+//    let sortShopingProductDescriptor = NSSortDescriptor(key: "id", ascending: true)
+//    //var shopingProductTable : ShopingProductTable(context: context)
 
     // variable for ToShopProductTable
     
-    var toShopProductArray = [ToShopProductTable]()
-    let featchResultCtrlToShopProduct: NSFetchedResultsController<ToShopProductTable>
-    var feachToShopProductRequest:NSFetchRequest<ToShopProductTable> = ToShopProductTable.fetchRequest()
-    let sortToShopProductDescriptor = NSSortDescriptor(key: "id", ascending: true)
+//    var toShopProductArray = [ToShopProductTable]()
+//    let featchResultCtrlToShopProduct: NSFetchedResultsController<ToShopProductTable>
+//    var feachToShopProductRequest:NSFetchRequest<ToShopProductTable> = ToShopProductTable.fetchRequest()
+//    let sortToShopProductDescriptor = NSSortDescriptor(key: "id", ascending: true)
     //var shopingProductTable : ShopingProductTable(context: context)
 
-    // variable for BasketProductTable
-    var basketProductArray = [BasketProductTable]()
-    let featchResultCtrlBasketProduct: NSFetchedResultsController<BasketProductTable>
-    var feachBasketProductRequest:NSFetchRequest<BasketProductTable> = BasketProductTable.fetchRequest()
-    let sortBasketProductDescriptor = NSSortDescriptor(key: "id", ascending: true)
-    //var shopingProductTable : ShopingProductTable(context: context)
+//    // variable for BasketProductTable
+//    var basketProductArray = [BasketProductTable]()
+//    let featchResultCtrlBasketProduct: NSFetchedResultsController<BasketProductTable>
+//    var feachBasketProductRequest:NSFetchRequest<BasketProductTable> = BasketProductTable.fetchRequest()
+//    let sortBasketProductDescriptor = NSSortDescriptor(key: "id", ascending: true)
+//    //var shopingProductTable : ShopingProductTable(context: context)
+    
+    
     var usersArray=[UsersTable]()
     var scanerCodebarValue: String {
         didSet {
@@ -70,29 +75,12 @@ class Database  {
     // initialising class Database
     init(context: NSManagedObjectContext) {
         self.context = context
+        self.scanerCodebarValue = ""
         category  = CategorySeting(context: context)
         product   = ProductSeting(context: context)
-
-        
-        // init Eniity buffors
-        //product = ProductTable(context: context)
-        //shoping = ShopingProductTable(context: context)
-        
-        product.feachProductRequest.sortDescriptors=[product.sortProductDescriptor]
-        product.featchResultCtrlProduct=NSFetchedResultsController(fetchRequest: product.feachProductRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
-        feachShopingRequest.sortDescriptors=[sortShopingProductDescriptor]
-        featchResultCtrlShopingProduct=NSFetchedResultsController(fetchRequest: feachShopingRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
-        feachToShopProductRequest.sortDescriptors=[sortToShopProductDescriptor]
-        featchResultCtrlToShopProduct=NSFetchedResultsController(fetchRequest: feachToShopProductRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
-        feachBasketProductRequest.sortDescriptors=[sortBasketProductDescriptor]
-        featchResultCtrlBasketProduct=NSFetchedResultsController(fetchRequest: feachBasketProductRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
-        //feachCategoryRequest.sortDescriptors=[]
-        //featchResultCtrlCategory=NSFetchedResultsController(fetchRequest: feachCategoryRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        self.scanerCodebarValue = ""
+        toShopProduct = ToShopProduct(context: context)
+        shopingProduct = ShopingProduct(context: context)
+        basketProduct = BasketProduct(context: context)
     }
     
     func getParam(tableArrayWith dbName: DbTableNames) -> [AnyObject] {
@@ -103,11 +91,11 @@ class Database  {
         case .categories:
             myArray  = product.productArray
         case .shopingProduct:
-            myArray  = shopingProductArray
+            myArray  = shopingProduct.shopingProductArray
         case .toShop:
-            myArray  = toShopProductArray
+            myArray  = toShopProduct.toShopProductArray
         case .basket:
-            myArray  = basketProductArray
+            myArray  = basketProduct.basketProductArray
         case .users:
             print("ERROR: myArray  = userArray")
         }
@@ -165,7 +153,7 @@ class Database  {
 //        predicates.append(predicate)
 //        let predicateAll=NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: predicates)
 //        reqest.predicate=predicateAll
-//  let groupPredicate=NSPredicate(format: "%K = %@", "categoryId", "\(findCategoryId)")
+//        let groupPredicate=NSPredicate(format: "%K = %@", "categoryId", "\(findCategoryId)")
         
         
         //request = ProductTable.fetchRequest()
@@ -176,18 +164,17 @@ class Database  {
                 //self.productArray = newArray as! [ProductTable] }
                 switch tabName {
                     case .products       :
-                    product.productArray = newArray as! [ProductTable]
+                        product.productArray = newArray as! [ProductTable]
                     case .basket         :
-                    basketProductArray = newArray as! [BasketProductTable]
+                        basketProduct.basketProductArray = newArray as! [BasketProductTable]
                     case .shopingProduct :
-                    shopingProductArray = newArray as! [ShopingProductTable]
+                        shopingProduct.shopingProductArray = newArray as! [ShopingProductTable]
                     case .categories     :
-                    category.categoryArray = newArray as! [CategoryTable]
-                    
+                        category.categoryArray = newArray as! [CategoryTable]
                     case .users          :
-                    usersArray = newArray as! [UsersTable]
+                        usersArray = newArray as! [UsersTable]
                     case .toShop         :
-                    toShopProductArray = newArray as! [ToShopProductTable]
+                        toShopProduct.toShopProductArray = newArray as! [ToShopProductTable]
                 }
             }
             else {
@@ -370,12 +357,13 @@ class Database  {
             switch searchTable {
             case .products:         product.productArray       = newSearchArray as! [ProductTable]
                                     numberOfRecords    = product.productArray.count
-            case .shopingProduct:   basketProductArray = newSearchArray as! [BasketProductTable]
-                                    numberOfRecords    = basketProductArray.count
-            case .toShop:           toShopProductArray = newSearchArray as! [ToShopProductTable]
-                                    numberOfRecords    = toShopProductArray.count
-            case .basket:           basketProductArray = newSearchArray as! [BasketProductTable]
-                                    numberOfRecords    = basketProductArray.count
+            // FIXME - basketProduct to shopingProduct
+            case .shopingProduct:   basketProduct.basketProductArray = newSearchArray as! [BasketProductTable]
+                                    numberOfRecords    = basketProduct.basketProductArray.count
+            case .toShop:           toShopProduct.toShopProductArray = newSearchArray as! [ToShopProductTable]
+                                    numberOfRecords    = toShopProduct.toShopProductArray.count
+            case .basket:           basketProduct.basketProductArray = newSearchArray as! [BasketProductTable]
+                                    numberOfRecords    = basketProduct.basketProductArray.count
             default:
                 print("Table does not exist")
             }
@@ -458,12 +446,27 @@ class Database  {
         save()
     }
     func addToBasket(product : ProductTable) {
-        let toShopProduct = ToShopProductTable(context: context)
-        toShopProduct.changeDate=Date.init()
-        toShopProduct.eanCode=product.eanCode
-        toShopProduct.productRelation=product
-        toShopProductArray.append(toShopProduct)        
+        let toShop = ToShopProductTable(context: context)
+        toShop.changeDate=Date.init()
+        toShop.eanCode=product.eanCode
+        toShop.productRelation=product
+        toShopProduct.toShopProductArray.append(toShop)
     }
+        // TODO: - removeFromBasket
+    func removeFromBasket(withProductRec row : Int = -1) {
+        let r = (row == -1 ? product.productArray.count-1 : row)
+        context.delete(product.productArray[r])
+        product.productArray.remove(at: r)
+        save()
+    }
+//    func deleteOne(withProductRec row : Int = -1) {
+//        let r = (row == -1 ? product.productArray.count-1 : row)
+//        context.delete(product.productArray[r])
+//        product.productArray.remove(at: r)
+//        save()
+//    }
+
+    
     func findSelestedCategory(categoryId : Int) -> CategoryTable {
         return database.category.categoryArray[categoryId]
     }
@@ -568,30 +571,75 @@ class ProductSeting {
     var context: NSManagedObjectContext
         // variable for ProductTable
         var productArray : [ProductTable] = []
-        var featchResultCtrlProduct: NSFetchedResultsController<ProductTable>
-        let feachProductRequest: NSFetchRequest<ProductTable> = ProductTable.fetchRequest()
-        var sortProductDescriptor:NSSortDescriptor
+        var featchResultCtrl: NSFetchedResultsController<ProductTable>
+        let feachRequest: NSFetchRequest<ProductTable> = ProductTable.fetchRequest()
+        var sortDescriptor:NSSortDescriptor
     init(context: NSManagedObjectContext)
     {
         self.context=context
         productArray=[]
-        sortProductDescriptor=NSSortDescriptor(key: "productName", ascending: true)
-        feachProductRequest.sortDescriptors = [sortProductDescriptor]
-        featchResultCtrlProduct=NSFetchedResultsController(fetchRequest: feachProductRequest, managedObjectContext:  context, sectionNameKeyPath: nil, cacheName: nil)
+        sortDescriptor=NSSortDescriptor(key: "productName", ascending: true)
+        feachRequest.sortDescriptors = [sortDescriptor]
+        featchResultCtrl=NSFetchedResultsController(fetchRequest: feachRequest, managedObjectContext:  context, sectionNameKeyPath: nil, cacheName: nil)
     }
-
-    
-    //    // variable for ProductTable
-    //    var productArray : [ProductTable] = []
-    //    var featchResultCtrlProduct: NSFetchedResultsController<ProductTable>
-    //    let feachProductRequest: NSFetchRequest<ProductTable> = ProductTable.fetchRequest()
-    //    let sortProductDescriptor = NSSortDescriptor(key: "productName", ascending: true)
-    //    //var productTable = ProductTable(context: context)
-    
-        //var productTable = ProductTable(context: context)
     
 } // end of class ProductSeting
 
+// New Class ------------------------------------------
+class ToShopProduct {
+    var context: NSManagedObjectContext
+    // variable for ToShopProductTable
+    var toShopProductArray = [ToShopProductTable]()
+    var featchResultCtrl: NSFetchedResultsController<ToShopProductTable>
+    var feachRequest:NSFetchRequest<ToShopProductTable> = ToShopProductTable.fetchRequest()
+    let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
+    init(context: NSManagedObjectContext)
+    {
+        self.context=context
+        toShopProductArray=[]
+        feachRequest.sortDescriptors = [sortDescriptor]
+        feachRequest.sortDescriptors=[sortDescriptor]
+        featchResultCtrl = NSFetchedResultsController(fetchRequest: feachRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+    }
+}
+
+// New Class ------------------------------------------
+class ShopingProduct {
+    var context: NSManagedObjectContext
+    // variable for ShopingProductTable
+    var shopingProductArray = [ShopingProductTable]()
+    var featchResultCtrl: NSFetchedResultsController<ShopingProductTable>
+    var feachRequest:NSFetchRequest<ShopingProductTable> = ShopingProductTable.fetchRequest()
+    let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
+    //var shopingProductTable : ShopingProductTable(context: context)
+    init(context: NSManagedObjectContext)
+    {
+        self.context=context
+        shopingProductArray = []
+        feachRequest.sortDescriptors = [sortDescriptor]
+        feachRequest.sortDescriptors = [sortDescriptor]
+        featchResultCtrl = NSFetchedResultsController(fetchRequest: feachRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+    }
+}
+
+// New Class ------------------------------------------
+class BasketProduct {
+    var context: NSManagedObjectContext
+    // variable for BasketProductTable
+    var basketProductArray = [BasketProductTable]()
+    var featchResultCtrl: NSFetchedResultsController<BasketProductTable>
+    var feachRequest:NSFetchRequest<BasketProductTable> = BasketProductTable.fetchRequest()
+    let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
+    //var shopingProductTable : ShopingProductTable(context: context)
+    init(context: NSManagedObjectContext)
+    {
+        self.context=context
+        basketProductArray = []
+        feachRequest.sortDescriptors = [sortDescriptor]
+        feachRequest.sortDescriptors = [sortDescriptor]
+        featchResultCtrl = NSFetchedResultsController(fetchRequest: feachRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+    }
+}
 
 
 
@@ -601,4 +649,14 @@ class ProductSeting {
 //        reqest.predicate=predicateAll
 //  let groupPredicate=NSPredicate(format: "%K = %@", "categoryId", "\(findCategoryId)")
 
+
+
+//    // variable for ProductTable
+//    var productArray : [ProductTable] = []
+//    var featchResultCtrlProduct: NSFetchedResultsController<ProductTable>
+//    let feachProductRequest: NSFetchRequest<ProductTable> = ProductTable.fetchRequest()
+//    let sortProductDescriptor = NSSortDescriptor(key: "productName", ascending: true)
+//    //var productTable = ProductTable(context: context)
+
+//var productTable = ProductTable(context: context)
 

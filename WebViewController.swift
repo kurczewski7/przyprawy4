@@ -40,7 +40,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
     }
     func webCreatorDataSource(forRow row: Int, forSection section: Int) -> ProductTable? {
         let  prodNumber=database.category.sectionsData[section].objects[row]
-        let product = database.toShopProductArray[prodNumber].productRelation
+        let product = database.toShopProduct.toShopProductArray[prodNumber].productRelation
         return product
     }
     func displaySms() {

@@ -22,7 +22,6 @@ class ToShopTableViewController: UIViewController, UITableViewDelegate, UITableV
         tap.cancelsTouchesInView = true
         view.addGestureRecognizer(tap)
         view.addGestureRecognizer(longTap)
-        
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     @objc func hideKeyboard() {
@@ -35,7 +34,7 @@ class ToShopTableViewController: UIViewController, UITableViewDelegate, UITableV
 
     override func viewWillAppear(_ animated: Bool) {
         database.loadData(tableNameType: .toShop)
-        database.category.crateCategoryGroups(forToShopProduct: database.toShopProductArray)
+        database.category.crateCategoryGroups(forToShopProduct: database.toShopProduct.toShopProductArray)
         //database.category.createSectionsData()
         tabView.reloadData()
         print("viewWillAppear")
@@ -58,8 +57,8 @@ class ToShopTableViewController: UIViewController, UITableViewDelegate, UITableV
     }
     func getToShopProduct(indexPath: IndexPath) -> ProductTable?  {
         let prodNumber=database.category.sectionsData[indexPath.section].objects[indexPath.row]
-        let  xxx = prodNumber < database.toShopProductArray.count ? prodNumber : database.toShopProductArray.count-1
-        let toShopProduct = database.toShopProductArray[xxx].productRelation
+        let  xxx = prodNumber < database.toShopProduct.toShopProductArray.count ? prodNumber : database.toShopProduct.toShopProductArray.count-1
+        let toShopProduct = database.toShopProduct.toShopProductArray[xxx].productRelation
         return toShopProduct
     }
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -115,8 +114,9 @@ class ToShopTableViewController: UIViewController, UITableViewDelegate, UITableV
               print("Kasowanie")
               //database.toShopProductArray.remove(at: indexPath.row)
               tableView.beginUpdates()
-            
+// TODO: - kasowanie toShop
             database.category.deleteElement(forIndexpath: indexPath)
+            //database.
             
             tableView.deleteRows(at: [indexPath], with: .fade)
               tableView.endUpdates()

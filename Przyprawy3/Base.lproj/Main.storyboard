@@ -1332,7 +1332,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s4S-cU-ueK"/>
                     </view>
-                    <navigationItem key="navigationItem" title="At home 🛒" id="GKR-Ys-x4T">
+                    <navigationItem key="navigationItem" title="Produkty 🛒" id="GKR-Ys-x4T">
                         <barButtonItem key="backBarButtonItem" title="🛒" id="kHf-ZQ-Hpu"/>
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="barcode" id="XNQ-Aa-Ftd">
@@ -1363,7 +1363,7 @@
             </objects>
             <point key="canvasLocation" x="3729" y="777"/>
         </scene>
-        <!--To shop-->
+        <!--Lista 1-->
         <scene sceneID="zhV-n2-wtc">
             <objects>
                 <viewController id="c5G-IV-pUg" customClass="ToShopTableViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
@@ -1463,7 +1463,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pPi-pd-eMj"/>
                     </view>
-                    <navigationItem key="navigationItem" title="To shop" id="HzP-hd-KRy">
+                    <navigationItem key="navigationItem" title="Lista 1" id="HzP-hd-KRy">
                         <barButtonItem key="leftBarButtonItem" enabled="NO" image="documents" id="mka-Rm-36V">
                             <connections>
                                 <action selector="changeList:" destination="c5G-IV-pUg" id="dGK-dF-wNA"/>
