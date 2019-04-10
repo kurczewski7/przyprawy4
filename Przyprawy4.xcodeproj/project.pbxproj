@@ -65,7 +65,7 @@
 		2C1B3BDC21B7D12000B53ABA /* TakePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotoViewController.swift; sourceTree = "<group>"; };
 		2C1B793D219C66DB00A7BD63 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		2C1B793F219C7DE300A7BD63 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		2C1EB36021A46ADA00426F61 /* ToShopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToShopTableViewController.swift; sourceTree = "<group>"; };
+		2C1EB36021A46ADA00426F61 /* ToShopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToShopTableViewController.swift; path = ../ToShopTableViewController.swift; sourceTree = "<group>"; };
 		2C1EB36221A46B4B00426F61 /* ToShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToShopTableViewCell.swift; sourceTree = "<group>"; };
 		2C1F1D6622072CD3004665DD /* WebCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCreator.swift; sourceTree = "<group>"; };
 		2C22CF2A220CBB4100F6B53B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -81,9 +81,9 @@
 		2C82B33C21B4655600EDB60F /* ScanerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanerViewController.swift; sourceTree = "<group>"; };
 		2C82B678223925A900772BF6 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		2C8C528C2122E135006D8099 /* AtHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtHomeViewController.swift; sourceTree = "<group>"; };
-		2CB2281821F24BD8008A3292 /* InBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InBasketViewController.swift; sourceTree = "<group>"; };
-		2CB2281A21F2522C008A3292 /* InBasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InBasketTableViewCell.swift; sourceTree = "<group>"; };
-		2CDC33AD225762B7000BCBE1 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		2CB2281821F24BD8008A3292 /* InBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InBasketViewController.swift; path = ../InBasketViewController.swift; sourceTree = "<group>"; };
+		2CB2281A21F2522C008A3292 /* InBasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InBasketTableViewCell.swift; path = ../InBasketTableViewCell.swift; sourceTree = "<group>"; };
+		2CDC33AD225762B7000BCBE1 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+extension.swift"; path = "Model/String+extension.swift"; sourceTree = "<group>"; };
 		2CE27563210237AF001C046B /* Przyprawy4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Przyprawy4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE27566210237AF001C046B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CE27568210237AF001C046B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,10 +129,12 @@
 		2C158CBD2186106F00C3438B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2C1F1D6622072CD3004665DD /* WebCreator.swift */,
 				2CE2756D210237AF001C046B /* DataModel.xcdatamodeld */,
 				2C31B32421383A4900B7581D /* Database.swift */,
 				2C158CD7218623B300C3438B /* CoreDataStack.swift */,
 				2C70579B2139ED4300B99FEA /* Product.swift */,
+				2C82B678223925A900772BF6 /* Server.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,6 +150,11 @@
 		2C158CC1218610BB00C3438B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2C1EB36021A46ADA00426F61 /* ToShopTableViewController.swift */,
+				2CB2281A21F2522C008A3292 /* InBasketTableViewCell.swift */,
+				2CB2281821F24BD8008A3292 /* InBasketViewController.swift */,
+				2C3F37A82216060F00397BD7 /* ShareViewController.swift */,
+				2C22CF2A220CBB4100F6B53B /* WebViewController.swift */,
 				2C82B33C21B4655600EDB60F /* ScanerViewController.swift */,
 				2C1B793D219C66DB00A7BD63 /* CategoryViewController.swift */,
 				2CF73B032135D97700FEA34C /* BrakujeViewController.swift */,
@@ -177,10 +184,6 @@
 		2CE2755A210237AF001C046B = {
 			isa = PBXGroup;
 			children = (
-				2CDC33AD225762B7000BCBE1 /* String+extension.swift */,
-				2C22CF2A220CBB4100F6B53B /* WebViewController.swift */,
-				2C1F1D6622072CD3004665DD /* WebCreator.swift */,
-				2C3F37A82216060F00397BD7 /* ShareViewController.swift */,
 				2CE27565210237AF001C046B /* Przyprawy3 */,
 				2CE2757D210237B1001C046B /* Przyprawy3Tests */,
 				2CE27588210237B1001C046B /* Przyprawy3UITests */,
@@ -203,16 +206,13 @@
 			children = (
 				2CE2756A210237AF001C046B /* Main.storyboard */,
 				2CE27566210237AF001C046B /* AppDelegate.swift */,
-				2CB2281821F24BD8008A3292 /* InBasketViewController.swift */,
-				2CB2281A21F2522C008A3292 /* InBasketTableViewCell.swift */,
-				2C1EB36021A46ADA00426F61 /* ToShopTableViewController.swift */,
+				2CDC33AD225762B7000BCBE1 /* String+extension.swift */,
 				2C158CBD2186106F00C3438B /* Model */,
 				2C158CC1218610BB00C3438B /* Controllers */,
 				2C158CBF2186109800C3438B /* View */,
 				2C158CC2218610E400C3438B /* Enitties */,
 				2CE27570210237B1001C046B /* Assets.xcassets */,
 				2CE27575210237B1001C046B /* Info.plist */,
-				2C82B678223925A900772BF6 /* Server.swift */,
 			);
 			path = Przyprawy3;
 			sourceTree = "<group>";

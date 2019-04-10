@@ -556,8 +556,6 @@ class CategorySeting {
         let row = indexpath.row
         
 //aaaaaaaaaaaaaaaaaaaa
-       
-        
         sectionsData[secton].objects.remove(at: row)
         if sectionsData[secton].objects.count == 0 {
             print("UWAGA. OSTATNI ELEMENT")
