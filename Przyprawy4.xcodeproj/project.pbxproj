@@ -73,6 +73,8 @@
 		2C31B32421383A4900B7581D /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		2C38921F2122FE5300257476 /* AtHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtHomeCell.swift; sourceTree = "<group>"; };
 		2C3F37A82216060F00397BD7 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		2C691025225E9D7C00B09477 /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/Main.strings"; sourceTree = "<group>"; };
+		2C691026225E9D7C00B09477 /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		2C70579B2139ED4300B99FEA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		2C7288BC2147EE0F003506BE /* popViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popViewController.swift; sourceTree = "<group>"; };
 		2C7888DC212C492D00225A52 /* ShopingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopingListViewController.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pl-PL",
 			);
 			mainGroup = 2CE2755A210237AF001C046B;
 			productRefGroup = 2CE27564210237AF001C046B /* Products */;
@@ -436,6 +439,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2CE2756B210237AF001C046B /* Base */,
+				2C691025225E9D7C00B09477 /* pl-PL */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -444,6 +448,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2CE27573210237B1001C046B /* Base */,
+				2C691026225E9D7C00B09477 /* pl-PL */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -515,6 +521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

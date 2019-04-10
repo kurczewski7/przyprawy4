@@ -48,11 +48,9 @@ class ToShopTableViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - Table view data source
      func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-         print("numberOfSections \(database.category.sectionsData.count))")
         return database.category.sectionsData.count
      }
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("numberOfRowsInSection \(database.category.getCurrentSectionCount(forSection: section))")
         return   database.category.getCurrentSectionCount(forSection: section)
     }
     func getToShopProduct(indexPath: IndexPath) -> ProductTable?  {
@@ -62,17 +60,12 @@ class ToShopTableViewController: UIViewController, UITableViewDelegate, UITableV
         return toShopProduct
     }
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("section:\(indexPath.section) row:\(indexPath.row)")
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)  as! ToShopTableViewCell
         let toShop=getToShopProduct(indexPath: indexPath)
         if toShop != nil {
-            
             cell.producentLabel.text = toShop?.producent
             cell.productNameLabel.text = toShop?.productName
-            
-            
             cell.accessoryType = .detailButton
-            
             let grams="\(toShop?.weight ?? 0)g"
             cell.detailLabel.text = grams.count==2 ? "" : grams
             if let img=toShop?.fullPicture {
@@ -179,20 +172,16 @@ class ToShopTableViewController: UIViewController, UITableViewDelegate, UITableV
     //searchBarTextDidBeginEditin
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("clicked \(searchBar.text!)")
         //database.filterData(searchText: searchBar.text!, searchTable: .products, searchField: (self.selectedSegmentIndex==0 ? .Product : .Producent))
         DispatchQueue.main.async {
             self.searchedBar.resignFirstResponder()
         }
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("changed \(searchBar.text!)")
         //database.filterData(searchText: searchBar.text!, searchTable: .products, searchField: (self.selectedSegmentIndex==0 ? .Product : .Producent))
     }
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        
         keyboarActive = true
-        print("searchBarTextDidBeginEditing \(keyboarActive)")
     }
 //    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
 //        keyboarActive = false
@@ -201,7 +190,6 @@ class ToShopTableViewController: UIViewController, UITableViewDelegate, UITableV
 //    }
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         keyboarActive = false
-        print("searchBarTextDidEndEditing \(keyboarActive)")
         view.endEditing(true)
         //view.resignFirstResponder()
     }

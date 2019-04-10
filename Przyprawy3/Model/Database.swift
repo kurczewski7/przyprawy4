@@ -53,8 +53,6 @@ class Database  {
     var usersArray=[UsersTable]()
     var scanerCodebarValue: String {
         didSet {
-            print("Codebar was read :\(scanerCodebarValue)")
-            // let xx="49443310"
             self.eanMode = true
             self.filterData(searchText: scanerCodebarValue, searchTable: .products, searchField: .EAN)
             if database.product.productArray.count == 0 {
@@ -569,13 +567,11 @@ class CategorySeting {
     }
     func getCurrentSectionCount(forSection section: Int) -> Int {
         let val = self.sectionsData[section].objects.count //categoryGroups[section].count
-         // print("getCurrentSectionCount sec \(section):\(val)")
          return val
     }
     
     func getTotalNumberOfSection() -> Int {
         let val = self.sectionsData.count // database.category.getCurrentSectionCount(forSection: section)
-        // print("getTotalNumberOfSection:\(val)")
         return val
         
     }
