@@ -203,6 +203,13 @@ class Database  {
         arr.remove(at: r)
         save()
     }
+    func uncheckOne(withToShopRec row : Int, toCheck: Bool = false) {
+        var arr = toShopProduct.toShopProductArray
+        let r = (row == -1 ? arr.count-1 : row)
+        arr[r].productRelation?.checked = toCheck
+        save()
+    }
+
 //    func deleteOne(withToShopRec row : Int) {
 //        var arr = toShopProduct.toShopProductArray
 //
@@ -467,7 +474,7 @@ class Database  {
         }
         save()
     }
-    func addToBasket(product : ProductTable) {
+    func addToProductList(product : ProductTable) {
         let toShop = ToShopProductTable(context: context)
         toShop.changeDate=Date.init()
         toShop.eanCode=product.eanCode
@@ -475,7 +482,7 @@ class Database  {
         toShopProduct.toShopProductArray.append(toShop)
     }
         // TODO: - removeFromBasket
-    func removeFromBasket(withProductRec row : Int = -1) {
+    func removeFromProductList(withProductRec row : Int = -1) {
         let r = (row == -1 ? product.productArray.count-1 : row)
         context.delete(product.productArray[r])
         product.productArray.remove(at: r)

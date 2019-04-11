@@ -107,6 +107,7 @@ class ToShopTableViewController: UIViewController, UITableViewDelegate, UITableV
             tableView.beginUpdates()
             let prodNumber=database.category.sectionsData[indexPath.section].objects[indexPath.row]
             database.category.deleteElement(forIndexpath: indexPath)
+            database.uncheckOne(withToShopRec: prodNumber)
             database.deleteOne(withToShopRec: prodNumber)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()

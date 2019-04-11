@@ -146,13 +146,14 @@ class AtHomeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         {(action, indexPath) -> Void in
             currCell?.accessoryType = .checkmark
             database.product.productArray[indexPath.row].checked = true
-            database.addToBasket(product: database.product.productArray[indexPath.row])
+            database.addToProductList(product: database.product.productArray[indexPath.row])
             database.save()
         })
         let uncheckAction=UITableViewRowAction(style: .destructive, title: "❎\nUsuń z koszyka ", handler:
         { (action, indexPath) -> Void in
             currCell?.accessoryType = .none
             database.product.productArray[indexPath.row].checked = false
+            database.removeFromProductList(withProductRec: indexPath.row) 
             database.save()
         })
         checkAction.backgroundColor=UIColor(red: 48.0/255, green: 173.0/255, blue: 99.0/255, alpha: 1.0)
