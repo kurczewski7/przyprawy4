@@ -158,7 +158,6 @@
 				2C3F37A82216060F00397BD7 /* ShareViewController.swift */,
 				2C22CF2A220CBB4100F6B53B /* WebViewController.swift */,
 				2C82B33C21B4655600EDB60F /* ScanerViewController.swift */,
-				2C1B793D219C66DB00A7BD63 /* CategoryViewController.swift */,
 				2CF73B032135D97700FEA34C /* BrakujeViewController.swift */,
 				2C7288BC2147EE0F003506BE /* popViewController.swift */,
 				2C0A1D2721355BFF006FA312 /* PhoneContactsViewController.swift */,
@@ -170,6 +169,7 @@
 				2C38921F2122FE5300257476 /* AtHomeCell.swift */,
 				2C1B3BDC21B7D12000B53ABA /* TakePhotoViewController.swift */,
 				2C1EB36221A46B4B00426F61 /* ToShopTableViewCell.swift */,
+				2C1B793D219C66DB00A7BD63 /* CategoryViewController.swift */,
 				2C1B793F219C7DE300A7BD63 /* CategoryCollectionViewCell.swift */,
 				2C7888DE212C50AF00225A52 /* ShopingListCellView.swift */,
 			);

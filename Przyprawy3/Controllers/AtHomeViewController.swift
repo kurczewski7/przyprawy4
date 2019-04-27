@@ -19,6 +19,9 @@ class AtHomeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var productWasAdded=false
     var numberOfRecords = -1
     
+    // parameter from parent view
+    var selectedCategoryProduct = 2
+    
     let sg = UISegmentedControl(items: segmentValues)
     
     // MARK: Delegate method
@@ -39,8 +42,6 @@ class AtHomeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         //performSegue(withIdentifier: "goScanning", sender: self)
         //self.present(newViewController, animated: true, completion: nil)
-        
-       
     }
     @IBAction func searchButton(_ sender: UIBarButtonItem) {
         print("searchButton")
@@ -51,17 +52,23 @@ class AtHomeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("keyboard")
         searchedBar.resignFirstResponder()
     }
-
     override func viewDidLoad() {
-        
-        // DatabaseDelegate method
         super.viewDidLoad()
         keyboradBarBatonIcon.isEnabled=true
-
         initSearchBar(self.searchedBar)
-         database.loadData(tableNameType: .products)
-         database.delegate = self
-         // change beck icon
+        database.delegate = self
+        let xxx = database.selectedCategory?.id
+        print("XXX=\(String(describing: xxx))")
+        if let selCategoryProduct = database.selectedCategory?.id {
+            print("XXX=\(selCategoryProduct)")
+           database.loadData(tableNameType: .products, categoryId: Int16(selCategoryProduct))
+        }
+        else {
+            database.loadData(tableNameType: .products, categoryId: 0)
+        }
+
+        
+        // change beck icon
         let imgBackArrow = UIImage(named: "Cofnij")
         navigationController?.navigationBar.backIndicatorImage = imgBackArrow
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = imgBackArrow
@@ -71,6 +78,8 @@ class AtHomeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let sqlText = server.makeSqlTxt(database: database)
         print(sqlText)
     }
+
+        // DatabaseDelegate method
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
         noProductFound()
@@ -234,7 +243,7 @@ class AtHomeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("prepare for segue goToProducts")
         if segue.identifier=="goToProducts"
         {
-            let nextVC=segue.destination as! DetailAtHomeViewController
+            let nextVC=segue.destination as! DetailAtHomeViewController //AtHomeViewController
             nextVC.numberOfRow = numberOfRow
             let currentProduct = database.product.productArray[numberOfRow]
             nextVC.productImageName = currentProduct.pictureName ?? "question-mark"

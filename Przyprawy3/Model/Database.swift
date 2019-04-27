@@ -125,14 +125,15 @@ class Database  {
         }
         catch { print("Error fetching data from context \(error)")   }
     }
-    func loadData(tableNameType tabName : DbTableNames) {
+    func loadData(tableNameType tabName : DbTableNames, categoryId: Int16 = 0) {
         var request : NSFetchRequest<NSFetchRequestResult>?
         var groupPredicate:NSPredicate?
         
         switch tabName {
         case .products       :
             request = ProductTable.fetchRequest()
-            groupPredicate = NSPredicate(format: "%K = %@", "categoryId", "\(self.selectedCategory?.id ?? 9)")
+            groupPredicate = NSPredicate(format: "%K = %@", "categoryId", "\(categoryId)")
+            //groupPredicate = NSPredicate(format: "%K = %@", "categoryId", "\(self.selectedCategory?.id ?? 9)")
             request?.predicate = groupPredicate
         case .basket         :
             request = BasketProductTable.fetchRequest()
@@ -158,26 +159,22 @@ class Database  {
         do {    let newArray     = try context.fetch(request!)
             // Todo- error out of range
             
-            if newArray.count > 0  {
-                //self.productArray = newArray as! [ProductTable] }
-                switch tabName {
-                    case .products       :
-                        product.productArray = newArray as! [ProductTable]
-                    case .basket         :
-                        basketProduct.basketProductArray = newArray as! [BasketProductTable]
-                    case .shopingProduct :
-                        shopingProduct.shopingProductArray = newArray as! [ShopingProductTable]
-                    case .categories     :
-                        category.categoryArray = newArray as! [CategoryTable]
-                    case .users          :
-                        usersArray = newArray as! [UsersTable]
-                    case .toShop         :
-                        toShopProduct.toShopProductArray = newArray as! [ToShopProductTable]
-                }
-            }
-            else {
+            if newArray.count == 0  {
                 print("Error loading empty data")
-                //self.productArray = newArray as! [ProductTable]
+            }
+            switch tabName {
+                case .products       :
+                    product.productArray = newArray as! [ProductTable]
+                case .basket         :
+                    basketProduct.basketProductArray = newArray as! [BasketProductTable]
+                case .shopingProduct :
+                    shopingProduct.shopingProductArray = newArray as! [ShopingProductTable]
+                case .categories     :
+                    category.categoryArray = newArray as! [CategoryTable]
+                case .users          :
+                    usersArray = newArray as! [UsersTable]
+                case .toShop         :
+                    toShopProduct.toShopProductArray = newArray as! [ToShopProductTable]
             }
         }
         catch { print("Error fetching data from context \(error)")   }
@@ -497,6 +494,7 @@ class Database  {
 
     
     func findSelestedCategory(categoryId : Int) -> CategoryTable {
+        print("T: \(database.category.categoryArray[categoryId]))")
         return database.category.categoryArray[categoryId]
     }
     func searchEanCode() {
