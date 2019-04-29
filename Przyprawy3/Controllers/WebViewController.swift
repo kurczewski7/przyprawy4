@@ -47,7 +47,6 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         sms = webCreator.getFullSms(myPhoneNumber: "512589528", myEmail: "kurczewski7@gmail.com")
     }
     func displayHtml() {
-        let xxxxx="YYYYY"
         html = webCreator.getFullHtml()
         
         webView = WKWebView()
@@ -55,10 +54,10 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         view.addSubview(webView)
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-[webView]-|",
                                                            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
-                                                           metrics: nil, views: ["webView": webView]))
+                                                           metrics: nil, views: ["webView": webView!]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[webView]-|",
                                                            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
-                                                           metrics: nil, views: ["webView": webView]))
+                                                           metrics: nil, views: ["webView": webView!]))
         webView.uiDelegate = self
         webView.navigationDelegate = self
         webView.loadHTMLString(html, baseURL: nil)
