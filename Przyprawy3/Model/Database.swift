@@ -494,7 +494,6 @@ class Database  {
 
     
     func findSelestedCategory(categoryId : Int) -> CategoryTable {
-        print("T: \(database.category.categoryArray[categoryId]))")
         return database.category.categoryArray[categoryId]
     }
     func searchEanCode() {
