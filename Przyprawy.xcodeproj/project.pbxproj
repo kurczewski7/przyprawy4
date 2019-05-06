@@ -30,6 +30,7 @@
 		2C8C528D2122E135006D8099 /* AtHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C528C2122E135006D8099 /* AtHomeViewController.swift */; };
 		2CB2281921F24BD8008A3292 /* InBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2281821F24BD8008A3292 /* InBasketViewController.swift */; };
 		2CB2281B21F2522C008A3292 /* InBasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2281A21F2522C008A3292 /* InBasketTableViewCell.swift */; };
+		2CD0DA8C22808EE100CAC05C /* basketContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0DA8B22808EE100CAC05C /* basketContentController.swift */; };
 		2CDC33AE225762B7000BCBE1 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDC33AD225762B7000BCBE1 /* String+extension.swift */; };
 		2CE27567210237AF001C046B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE27566210237AF001C046B /* AppDelegate.swift */; };
 		2CE27569210237AF001C046B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE27568210237AF001C046B /* ViewController.swift */; };
@@ -85,6 +86,7 @@
 		2C8C528C2122E135006D8099 /* AtHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtHomeViewController.swift; sourceTree = "<group>"; };
 		2CB2281821F24BD8008A3292 /* InBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InBasketViewController.swift; path = ../InBasketViewController.swift; sourceTree = "<group>"; };
 		2CB2281A21F2522C008A3292 /* InBasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InBasketTableViewCell.swift; path = ../InBasketTableViewCell.swift; sourceTree = "<group>"; };
+		2CD0DA8B22808EE100CAC05C /* basketContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basketContentController.swift; sourceTree = "<group>"; };
 		2CDC33AD225762B7000BCBE1 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+extension.swift"; path = "Model/String+extension.swift"; sourceTree = "<group>"; };
 		2CE27563210237AF001C046B /* Przyprawy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Przyprawy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE27566210237AF001C046B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,8 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				2C1EB36021A46ADA00426F61 /* ToShopTableViewController.swift */,
-				2CB2281A21F2522C008A3292 /* InBasketTableViewCell.swift */,
 				2CB2281821F24BD8008A3292 /* InBasketViewController.swift */,
+				2CB2281A21F2522C008A3292 /* InBasketTableViewCell.swift */,
+				2CD0DA8B22808EE100CAC05C /* basketContentController.swift */,
 				2C3F37A82216060F00397BD7 /* ShareViewController.swift */,
 				2C22CF2A220CBB4100F6B53B /* WebViewController.swift */,
 				2C82B33C21B4655600EDB60F /* ScanerViewController.swift */,
@@ -378,6 +381,7 @@
 				2C1EB36321A46B4B00426F61 /* ToShopTableViewCell.swift in Sources */,
 				2C3F37A92216060F00397BD7 /* ShareViewController.swift in Sources */,
 				2CE27569210237AF001C046B /* ViewController.swift in Sources */,
+				2CD0DA8C22808EE100CAC05C /* basketContentController.swift in Sources */,
 				2C82B33D21B4655600EDB60F /* ScanerViewController.swift in Sources */,
 				2C82B679223925A900772BF6 /* Server.swift in Sources */,
 				2C1B7940219C7DE300A7BD63 /* CategoryCollectionViewCell.swift in Sources */,

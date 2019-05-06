@@ -13,7 +13,7 @@
         <!--Category 🗄-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CategoryViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CategoryViewController" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellCategories" id="fTp-vj-cpb" customClass="CategoryCollectionViewCell" customModule="Przyprawy4" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellCategories" id="fTp-vj-cpb" customClass="CategoryCollectionViewCell" customModule="Przyprawy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="165" height="165"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -138,7 +138,7 @@
         <!--Brakuje-->
         <scene sceneID="e8q-G9-MG6">
             <objects>
-                <viewController id="dnd-Dn-Lwg" customClass="BrakujeViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dnd-Dn-Lwg" customClass="BrakujeViewController" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="we7-F0-iyQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -331,7 +331,7 @@
         <!--Scanning now-->
         <scene sceneID="5xg-KY-RAv">
             <objects>
-                <viewController storyboardIdentifier="scanerViewController" id="0QL-Ds-h0P" customClass="ScanerViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="scanerViewController" id="0QL-Ds-h0P" customClass="ScanerViewController" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0U1-aO-fXe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -366,7 +366,7 @@
         <!--Take Photo-->
         <scene sceneID="Z6N-fE-BRu">
             <objects>
-                <viewController storyboardIdentifier="takePhoto" id="xj8-M5-K4c" userLabel="Take Photo" customClass="TakePhotoViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="takePhoto" id="xj8-M5-K4c" userLabel="Take Photo" customClass="TakePhotoViewController" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nmA-jB-NQx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -458,7 +458,7 @@
         <!--Detail At HomeView Controller2-->
         <scene sceneID="Wt5-z7-voZ">
             <objects>
-                <viewController id="enE-9m-W5Y" userLabel="Detail At HomeView Controller2" customClass="DetailAtHomeViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="enE-9m-W5Y" userLabel="Detail At HomeView Controller2" customClass="DetailAtHomeViewController" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3M5-ig-jKk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -540,7 +540,7 @@
         <!--Pop View Controller-->
         <scene sceneID="eJa-YL-QAU">
             <objects>
-                <viewController storyboardIdentifier="popVC" id="hTl-S7-ICk" userLabel="Pop View Controller" customClass="popViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popVC" id="hTl-S7-ICk" userLabel="Pop View Controller" customClass="popViewController" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zya-ih-sb8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -582,7 +582,7 @@
         <!--In Basket-->
         <scene sceneID="Gjb-as-UvW">
             <objects>
-                <viewController id="449-9N-d5u" customClass="InBasketViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="449-9N-d5u" customClass="InBasketViewController" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sq5-ic-DiP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -595,7 +595,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="FmZ-pv-Zaq" customClass="InBasketTableViewCell" customModule="Przyprawy4" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="FmZ-pv-Zaq" customClass="InBasketTableViewCell" customModule="Przyprawy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FmZ-pv-Zaq" id="VbF-hn-bMX">
@@ -680,12 +680,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Coc-yU-k5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3225" y="2254"/>
+            <point key="canvasLocation" x="3194" y="2369"/>
         </scene>
         <!--Lista zakupów -->
         <scene sceneID="dDu-HT-hDr">
             <objects>
-                <viewController id="OUu-tw-MgZ" customClass="ShopingListViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OUu-tw-MgZ" customClass="ShopingListViewController" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DB3-em-okH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -700,7 +700,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="NvK-IA-ir1" customClass="ShopingListCellView" customModule="Przyprawy4" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="NvK-IA-ir1" customClass="ShopingListCellView" customModule="Przyprawy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="102" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -754,7 +754,7 @@
         <!--Kontakty-->
         <scene sceneID="d14-di-eCt">
             <objects>
-                <viewController id="PRb-pf-nmK" customClass="Contacts" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PRb-pf-nmK" customClass="Contacts" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eWO-f5-Uet">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -851,7 +851,7 @@
         <!--Phone Contacts View Controller-->
         <scene sceneID="IpI-0c-vLJ">
             <objects>
-                <viewController id="Hn3-iw-zDm" userLabel="Phone Contacts View Controller" customClass="PhoneContactsViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Hn3-iw-zDm" userLabel="Phone Contacts View Controller" customClass="PhoneContactsViewController" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rbo-8b-ROb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -929,7 +929,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Xdy-XS-FUA" kind="relationship" relationship="rootViewController" id="g8Z-cg-VdN"/>
+                        <segue destination="449-9N-d5u" kind="relationship" relationship="rootViewController" id="Etg-K0-yKm"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iup-Lv-5Qm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -948,12 +948,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="449-9N-d5u" kind="relationship" relationship="rootViewController" id="Jvh-cO-wsR"/>
+                        <segue destination="Xdy-XS-FUA" kind="relationship" relationship="rootViewController" id="csC-YL-kfb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoG-5k-xHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2310" y="2254"/>
+            <point key="canvasLocation" x="2183" y="1554"/>
         </scene>
         <!--Płatność-->
         <scene sceneID="Mkk-ju-2V0">
@@ -996,7 +996,7 @@
         <!--To shop 3-->
         <scene sceneID="XVD-ro-i5J">
             <objects>
-                <viewController id="Xdy-XS-FUA" userLabel="To shop 3" customClass="ToShopTableViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Xdy-XS-FUA" userLabel="To shop 3" customClass="ToShopTableViewController" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S1g-jR-vzS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1012,7 +1012,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="zbC-Em-wal" customClass="ToShopTableViewCell" customModule="Przyprawy4" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="zbC-Em-wal" customClass="ToShopTableViewCell" customModule="Przyprawy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zbC-Em-wal" id="kff-LN-TKM">
@@ -1112,7 +1112,7 @@
         <!--Lista zakupow-->
         <scene sceneID="0g8-SP-WJz">
             <objects>
-                <viewController id="HD1-DK-cfl" customClass="WebViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HD1-DK-cfl" customClass="WebViewController" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V3Z-rT-t19">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1134,7 +1134,7 @@
         <!--Share-->
         <scene sceneID="2mT-IT-QOr">
             <objects>
-                <viewController id="Yha-b8-xHJ" customClass="ShareViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Yha-b8-xHJ" customClass="ShareViewController" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nzw-gr-6yu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1235,7 +1235,7 @@
         <!--Detail At HomeView Controller-->
         <scene sceneID="vmb-6b-Eec">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="AfV-sl-g9n" userLabel="Detail At HomeView Controller" customClass="AtHomeViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="AfV-sl-g9n" userLabel="Detail At HomeView Controller" customClass="AtHomeViewController" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pez-Gd-y1i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1251,7 +1251,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="rhw-jJ-cK2" customClass="AtHomeCell" customModule="Przyprawy4" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="rhw-jJ-cK2" customClass="AtHomeCell" customModule="Przyprawy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rhw-jJ-cK2" id="WbM-IT-Vxc">
@@ -1366,7 +1366,7 @@
         <!--Lista 1-->
         <scene sceneID="zhV-n2-wtc">
             <objects>
-                <viewController id="c5G-IV-pUg" customClass="ToShopTableViewController" customModule="Przyprawy4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c5G-IV-pUg" customClass="ToShopTableViewController" customModule="Przyprawy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3rz-Da-7hD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1382,7 +1382,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="IP8-P3-u5J" customClass="ToShopTableViewCell" customModule="Przyprawy4" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="IP8-P3-u5J" customClass="ToShopTableViewCell" customModule="Przyprawy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IP8-P3-u5J" id="CT4-bf-exK">
