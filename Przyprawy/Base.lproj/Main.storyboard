@@ -677,10 +677,13 @@
                         <viewLayoutGuide key="safeArea" id="DBb-0a-Jq0"/>
                     </view>
                     <navigationItem key="navigationItem" title="In Basket" id="7oS-dW-UmE"/>
+                    <connections>
+                        <outlet property="tabView" destination="qvL-gs-PTY" id="87f-CB-gUm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Coc-yU-k5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3194" y="2369"/>
+            <point key="canvasLocation" x="3180" y="2320"/>
         </scene>
         <!--Lista zakupów -->
         <scene sceneID="dDu-HT-hDr">
