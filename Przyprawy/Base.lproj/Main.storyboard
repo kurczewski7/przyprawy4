@@ -711,7 +711,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CYKORIA_ARROD_PAPRYKA_OSTRA_MIELONA_10G_59954826_0_173_200" translatesAutoresizingMaskIntoConstraints="NO" id="awf-Tb-EXm">
-                                                    <rect key="frame" x="0.0" y="-108" width="173" height="200"/>
+                                                    <rect key="frame" x="0.0" y="76" width="16" height="16"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jeg-E5-3az">
                                                     <rect key="frame" x="0.0" y="111" width="102" height="21"/>
