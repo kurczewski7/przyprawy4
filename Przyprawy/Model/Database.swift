@@ -80,7 +80,6 @@ class Database  {
         shopingProduct = ShopingProduct(context: context)
         basketProduct = BasketProduct(context: context)
     }
-    
     func getParam(tableArrayWith dbName: DbTableNames) -> [AnyObject] {
         var myArray: [AnyObject]?
         switch dbName {
@@ -99,7 +98,6 @@ class Database  {
         }
         return myArray!
     }
-
     func setSelectedCategory() {
         if category.categoryArray.count>0 {
             for elem in category.categoryArray {
@@ -153,9 +151,7 @@ class Database  {
 //        let predicateAll=NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: predicates)
 //        reqest.predicate=predicateAll
 //        let groupPredicate=NSPredicate(format: "%K = %@", "categoryId", "\(findCategoryId)")
-        
-        
-        //request = ProductTable.fetchRequest()
+//        request = ProductTable.fetchRequest()
         do {    let newArray     = try context.fetch(request!)
             // Todo- error out of range
             
@@ -179,6 +175,7 @@ class Database  {
         }
         catch { print("Error fetching data from context \(error)")   }
     }
+    // MARK: - Delete and Add record methods
     func deleteOne() {
         let r = product.productArray.count-1
         context.delete(product.productArray[r])
@@ -200,22 +197,19 @@ class Database  {
         arr.remove(at: r)
         save()
     }
+    func deleteOne(withBasketRec row : Int) {
+        var arr = basketProduct.basketProductArray   //toShopProduct.toShopProductArray
+        let r = (row == -1 ? arr.count-1 : row)
+        context.delete(arr[r])
+        arr.remove(at: r)
+        save()
+    }
     func uncheckOne(withToShopRec row : Int, toCheck: Bool = false) {
         var arr = toShopProduct.toShopProductArray
         let r = (row == -1 ? arr.count-1 : row)
         arr[r].productRelation?.checked = toCheck
         save()
     }
-
-//    func deleteOne(withToShopRec row : Int) {
-//        var arr = toShopProduct.toShopProductArray
-//
-//        let r = (row == -1 ? arr.count-1 : row)
-//        context.delete(arr[r])
-//        arr.remove(at: r)
-//        save()
-//    }
-
     func delTable(dbTableName : DbTableNames)  {
         let ReqVar = NSFetchRequest<NSFetchRequestResult>(entityName: dbTableName.rawValue)
         let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: ReqVar)
@@ -230,6 +224,10 @@ class Database  {
     
       func addOneRecord(newProduct : ProductTable) {
         self.product.productArray.append(newProduct)
+        self.save()
+    }
+    func addOneRecord(newProductInBasket basketProd: BasketProductTable) {
+        self.basketProduct.basketProductArray.append(basketProd)    // .productArray.append(newProduct)
         self.save()
     }
     func addProduct(withProductId id : Int, saving : Bool = true)    {        
@@ -250,6 +248,30 @@ class Database  {
             save()
         }
     }
+    func moveProdduct(toBasketFrom row: Int, toRow: Int = -1) {
+       if row < toShopProduct.toShopProductArray.count {
+        if let product = toShopProduct.toShopProductArray[row].productRelation {
+            print("prod:\(product.productName ?? "brak")")
+            let basket = BasketProductTable(context: context)
+            basket.productRelation = product
+            print("basket>\(basket.productRelation?.productName)")
+            // delTable(dbTableName: .basket)
+            addOneRecord(newProductInBasket: basket)
+        }
+        toShopProduct.toShopProductArray.remove(at: row)
+        
+//            let product = toShopProduct.toShopProductArray[row].productRelation
+//            let basket = BasketProductTable(context: context)
+//            basket.productRelation = product
+//            addOneRecord(newProductInBasket: basket)
+//            deleteOne(withToShopRec: row)
+        print("aaaa")
+        }
+        print("bbbb")
+    }
+    func moveProdduct(fromBasket fromRow: Int, toRow: Int = -1) {
+    }
+    // MARK: - giveData methods
     func giveElement(withProduct nr: Int) -> ProductTable
     {
         let product : ProductTable = ProductTable(context: context)

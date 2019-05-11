@@ -246,7 +246,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print("database.categoryArray.count przed : \(database.category.categoryArray.count)")
         database.loadData(tableNameType: .categories)
-        print("database.categoryArray.count przed : \(database.category.categoryArray.count)")
+        print("database.categoryArray.count po : \(database.category.categoryArray.count)")
+        
+        print("database.basketProduct.basketProductArray.count przed : \(database.basketProduct.basketProductArray.count)")
+        database.loadData(tableNameType: .basket)
+        print("database.basketProduct.basketProductArray.count po : \(database.basketProduct.basketProductArray.count)")
         if database.category.categoryArray.count == 0 {
             var i=1
             for rec in categoriesData {
