@@ -224,8 +224,8 @@
                                     <action selector="addNewCategory:" destination="dnd-Dn-Lwg" eventType="touchUpInside" id="W75-JF-jEC"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4I-YB-A35">
-                                <rect key="frame" x="243" y="528" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4I-YB-A35">
+                                <rect key="frame" x="31" y="560" width="51" height="31"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9R-fn-m3W">
                                 <rect key="frame" x="243" y="348" width="79" height="30"/>
@@ -255,8 +255,16 @@
                                     <action selector="delToShopButton:" destination="dnd-Dn-Lwg" eventType="touchUpInside" id="7I7-Of-7kL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sb-dz-Npk">
-                                <rect key="frame" x="250" y="482" width="33" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3i-pc-avL">
+                                <rect key="frame" x="243" y="483" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="DelBasket"/>
+                                <connections>
+                                    <action selector="delBasket:" destination="dnd-Dn-Lwg" eventType="touchUpInside" id="CuN-r1-ybx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sb-dz-Npk">
+                                <rect key="frame" x="243" y="542" width="33" height="30"/>
                                 <state key="normal" title="WEB"/>
                                 <connections>
                                     <action selector="WebCreate:" destination="dnd-Dn-Lwg" eventType="touchUpInside" id="7SA-Vl-Wln"/>
@@ -298,7 +306,6 @@
                             <constraint firstItem="N9R-fn-m3W" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Vzn-gh-ryu" secondAttribute="trailing" constant="8" symbolic="YES" id="eUf-QR-1P3"/>
                             <constraint firstItem="OmX-Qf-6kM" firstAttribute="top" secondItem="jwu-IS-Qhc" secondAttribute="bottom" constant="15" id="fNX-6a-t8h"/>
                             <constraint firstItem="WRR-MA-7U8" firstAttribute="trailing" secondItem="N9R-fn-m3W" secondAttribute="trailing" id="jDJ-Jn-2vc"/>
-                            <constraint firstItem="5sb-dz-Npk" firstAttribute="top" secondItem="kiT-Rj-qIx" secondAttribute="bottom" constant="16" id="jxA-75-o8D"/>
                             <constraint firstItem="Qkf-JA-PxA" firstAttribute="leading" secondItem="1qv-mw-ySz" secondAttribute="leading" id="kL8-wR-dHE"/>
                             <constraint firstItem="Qkf-JA-PxA" firstAttribute="leading" secondItem="8cZ-ed-PZW" secondAttribute="leading" id="l5i-W6-CEx"/>
                             <constraint firstItem="0Hl-y2-TA5" firstAttribute="trailing" secondItem="o8s-s8-0Wr" secondAttribute="trailing" constant="48" id="lIy-0R-GfV"/>
@@ -711,7 +718,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CYKORIA_ARROD_PAPRYKA_OSTRA_MIELONA_10G_59954826_0_173_200" translatesAutoresizingMaskIntoConstraints="NO" id="awf-Tb-EXm">
-                                                    <rect key="frame" x="0.0" y="76" width="16" height="16"/>
+                                                    <rect key="frame" x="0.0" y="-108" width="173" height="200"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jeg-E5-3az">
                                                     <rect key="frame" x="0.0" y="111" width="102" height="21"/>

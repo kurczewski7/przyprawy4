@@ -120,7 +120,8 @@ class AtHomeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return database.product.productArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!   AtHomeCell 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as!   AtHomeCell
+        // FIXME: error loading
         let product=database.product.productArray[indexPath.row]
         cell.productLabel.text = product.productName?.capitalized(with: nil) ?? "No product"
 

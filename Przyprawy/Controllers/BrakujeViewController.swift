@@ -78,10 +78,11 @@ func initialProduct()
              k=k+1
             otherProduct(pictureName: rek3, productName: "aaaaa bbbbb ccccc ddddd eeeeee ffffff ggggg hhhhh iiiiii jjjjj kkkkk llllll mmmmm nnnn oooooo ppppp", categoryNumber: 7, productId: k)
         }
-        
-       
-        
      }
+    
+    @IBAction func delBasket(_ sender: Any) {
+        database.delTable(dbTableName: .basket)
+    }
     func otherProduct(pictureName: String, productName: String, categoryNumber: Int, productId: Int) {
         //database.addProduct(withProductId: j)
         let category = database.category.categoryArray[categoryNumber]

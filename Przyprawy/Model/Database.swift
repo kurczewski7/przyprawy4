@@ -194,14 +194,14 @@ class Database  {
         var arr = toShopProduct.toShopProductArray
         let r = (row == -1 ? arr.count-1 : row)
         context.delete(arr[r])
-        arr.remove(at: r)
+        toShopProduct.toShopProductArray.remove(at: r)
         save()
     }
     func deleteOne(withBasketRec row : Int) {
         var arr = basketProduct.basketProductArray   //toShopProduct.toShopProductArray
         let r = (row == -1 ? arr.count-1 : row)
         context.delete(arr[r])
-        arr.remove(at: r)
+        basketProduct.basketProductArray.remove(at: r)
         save()
     }
     func uncheckOne(withToShopRec row : Int, toCheck: Bool = false) {
@@ -226,10 +226,25 @@ class Database  {
         self.product.productArray.append(newProduct)
         self.save()
     }
-    func addOneRecord(newProductInBasket basketProd: BasketProductTable) {
-        self.basketProduct.basketProductArray.append(basketProd)    // .productArray.append(newProduct)
+    func addOneRecord(newProductInBasket basketProd: BasketProductTable, at row: Int = -1) {
+        if row == -1 {
+            self.basketProduct.basketProductArray.append(basketProd)
+        }
+        else {
+            self.basketProduct.basketProductArray.insert(basketProd, at: row)
+        }
         self.save()
     }
+    func addOneRecord(newProductToShop toshopProd: ToShopProductTable, at row: Int = -1) {
+        if row == -1 {
+            self.toShopProduct.toShopProductArray.append(toshopProd)
+        }
+        else {
+            self.toShopProduct.toShopProductArray.insert(toshopProd, at: row)
+        }
+        self.save()
+    }
+
     func addProduct(withProductId id : Int, saving : Bool = true)    {        
         let productElem = giveElement(withProduct: id)
         productElem.id=Int32(id)
@@ -251,25 +266,26 @@ class Database  {
     func moveProdduct(toBasketFrom row: Int, toRow: Int = -1) {
        if row < toShopProduct.toShopProductArray.count {
         if let product = toShopProduct.toShopProductArray[row].productRelation {
-            print("prod:\(product.productName ?? "brak")")
             let basket = BasketProductTable(context: context)
+            print("prod:\(product.productName ?? "brak")")
             basket.productRelation = product
-            print("basket>\(basket.productRelation?.productName)")
-            // delTable(dbTableName: .basket)
-            addOneRecord(newProductInBasket: basket)
+            deleteOne(withToShopRec: row)
+            addOneRecord(newProductInBasket: basket, at: toRow)
         }
-        toShopProduct.toShopProductArray.remove(at: row)
-        
-//            let product = toShopProduct.toShopProductArray[row].productRelation
-//            let basket = BasketProductTable(context: context)
-//            basket.productRelation = product
-//            addOneRecord(newProductInBasket: basket)
-//            deleteOne(withToShopRec: row)
-        print("aaaa")
+//          toShopProduct.toShopProductArray.remove(at: row)
+//          let product = toShopProduct.toShopProductArray[row].productRelation
         }
-        print("bbbb")
     }
-    func moveProdduct(fromBasket fromRow: Int, toRow: Int = -1) {
+    func moveProdduct(fromBasketFrom row: Int, toRow: Int = -1) {
+        if row < basketProduct.basketProductArray.count {
+            if let product = basketProduct.basketProductArray[row].productRelation {
+                print("prod:\(product.productName ?? "brak")")
+                let toShop = ToShopProductTable(context:  context)
+                toShop.productRelation=product
+                deleteOne(withBasketRec: row)
+                addOneRecord(newProductToShop: toShop, at: toRow)
+            }
+        }
     }
     // MARK: - giveData methods
     func giveElement(withProduct nr: Int) -> ProductTable
