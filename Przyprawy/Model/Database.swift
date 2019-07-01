@@ -205,9 +205,8 @@ class Database  {
         save()
     }
     func uncheckOne(withToShopRec row : Int, toCheck: Bool = false) {
-        var arr = toShopProduct.toShopProductArray
-        let r = (row == -1 ? arr.count-1 : row)
-        arr[r].productRelation?.checked = toCheck
+        let r = (row == -1 ? toShopProduct.toShopProductArray.count-1 : row)
+        toShopProduct.toShopProductArray[r].productRelation?.checked = toCheck
         save()
     }
     func delTable(dbTableName : DbTableNames)  {
@@ -252,7 +251,7 @@ class Database  {
         //productElem.parentCategory?.categoryName=database.selectedCategory?.categoryName
         productElem.parentCategory=database.selectedCategory
         productElem.categoryId = 1
-        self.product.productArray.append(productElem)
+        product.productArray.append(productElem)
         if product.productArray[product.productArray.count-1].pictureName == nil
         {
             print("---------")
